@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>The Impact of Chronic Diseases on Early Retirement:</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Nga Chau My Ha1, 2, Diana Pacheco B.1, 2" />
+    <meta name="date" content="2024-08-26" />
+    <script src="libs/header-attrs-2.27/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+    <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+    <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding-0.33/datatables.js"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <link href="libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# The Impact of Chronic Diseases on Early Retirement:
+]
+.subtitle[
+## A Difference-in-Differences Analysis
+]
+.author[
+### Nga Chau My Ha<sup>1, 2</sup>, Diana Pacheco B.<sup>1, 2</sup>
+]
+.institute[
+### <sup>1</sup> University of Lucerne, <sup>2</sup> Swiss Paraplegic Research
+]
+.date[
+### 2024-08-26
+]
+
+---
+
+background-image: url("images/cool.png")
+
+# Background
+
+There are two streams leading to the question of research
+--
+.pull-left[
+#### Stream 1
+- The share of older workers has been increasing after many pension reforms in the Europe&lt;sup&gt;1&lt;/sup&gt;.
+- However, the reported actual and expected retirement ages are consistently lower than the statutory retirement age&lt;sup&gt;2, 3&lt;/sup&gt;.
+]
+--
+.pull-right[
+#### Stream 2
+- Poor health was strongly evident in its negative impact on individuals' working lives&lt;sup&gt;4-7&lt;/sup&gt;.
+- The increasing share of older workers is facing a rising health burden, mainly coming from chronic diseases (CDs)&lt;sup&gt;8&lt;/sup&gt;.
+]
+
+---
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/1c/Background_proj1.png)
+background-size: 900px
+background-position: center
+
+# Research question
+
+&lt;div style="text-align: center;"&gt;
+  "Whether and how CDs affect the decision of early retirement among workers aged 55 and over across European country?"
+&lt;/div&gt;
+---
+background-image: url("images/cool.png")
+# Methodology
+
+--
+.pull-left[
+### Objectives
+Estimate 02 outcomes:
+1. The probability of early retirement (ER):
+P(ER = 1 | CD = 1)
+1. The working years lost to ER:
+lost_years = NRA - ERA
+
+due to having CDs.
+]
+.footnote[
+**CD**: chronic disease; **ER**: early retirement; **ERA**: early retirement age; **NRA**: national retirement age
+]
+--
+.pull-right[
+### Data
+Longitudinal data from 12 European countries was collected from the Survey of Health, Ageing, and Retirement in Europe (SHARE) from 2004 to 2020.
+]
+
+---
+background-image: url("images/cool.png")
+# Methodology
+
+.pull-left[
+### Inclusion criteria
+- individuals aged from 55 to the national retirement age (NRA), and
+- initially staying in the labor market without CDs (employed or not)
+- excluding those with unknown retirement status.
+]
+
+.footnote[
+**CD**: chronic disease; **ER**: early retirement; **ERA**: early retirement age; **NRA**: national retirement age
+]
+--
+.pull-right[
+### Variables
+- Having CDs: **D** = 1 
+- Group indicator: `$$\mathcal{G}_g = \mathbf{1}\{G = g\}$$`(g: the wave at first diagnosis)
+- The never-treated: **C** = 1
+- Having ER: **ER** = 1
+- Lost years: `$$\text{Lost_years} = \text{NRA} - \text{ERA}$$`
+- Control variables (X): age, sex, couple, yedu, income percentile, country.
+]
+
+---
+background-image: url("images/cool.png")
+# Methodology
+
+### Empirical approach
+- Applied the DiD with a staggered treatment and multiple time periods approach, as described by Callaway and Sant’ Anna (2021)&lt;sup&gt;9&lt;/sup&gt; to estimate the average treatment effect of having CDs for each particular sub-group at a specific time point t: **ATT(g, t)**.
+
+- **ATT(g, t)** are then selected and weighted aggregated to estimate the overall average treatment effect (ATT&lt;sup&gt;O&lt;/sup&gt;) or the event-study results (i.e., the average treatment effect among those with the same length of exposure).
+--
+
+####Technical note:
+
+- Method for ATT(g, t) estimation: inverse propability weighting (“ipw”);
+- Control group: never treated group (“nevertreated”);
+- Base period: the period right before having diagnosis (“universal”); 
+- Bootstrap is used to compute SE (1000 interations); 
+- Cluster by household ID. 
+
+---
+background-image: url("images/cool.png")
+# Results
+
+## Outcome 01
+
+#### Global estimation
+
+- Overall, people with CDs have, on average, a 16% higher risk of retiring early
+
+&lt;img src="Picture1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+background-image: url("images/cool.png")
+# Results
+
+## Outcome 01
+
+#### Country-specific estimation
+
+- Having chronic diseases triggers the decision to retire early in all observed countries; however, the effect sizes and patterns vary across nations.
+
+&lt;img src="Picture2.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+---
+background-image: url("images/cool.png")
+# Results
+
+## Outcome 2
+
+- Overall, people with CDs lose, on average, 3.7 working months to early retirement
+
+
+<div class="datatables html-widget html-fill-item" id="htmlwidget-255b4d3e7c4e6ff47490" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-255b4d3e7c4e6ff47490">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4","5","6","7","8","9","10","11","12"],["Slovenia","Belgium","Germany","Italy","Austria","Switzerland","Denmark","Spain","Sweden","Czech Republic","Estonia","France"],["0.99 = 11.9 months","0.60 = 7.2 months","0.50 = 6.0 months","0.45 = 5.4 months","0.35 = 4.2 months","0.23 = 2.8 months","0.17 = 2.0 months","0.17 = 2.0 months","0.14 = 1.7 months","0.10 = 1.2 months","0.03 = 0.4 months","0.04 = 0.5 months"],["0.61 - 1.38","0.36 - 0.83","0.29 - 0.71","0.23 - 0.67","0.13 - 0.58","0.11 - 0.35","0.09 - 0.27","0.03 - 0.32","0.04 - 0.25","0.02 - 0.20","0.01 - 0.06","-0.03 - 0.11"],["*","*","*","*","*","*","*","*","*","*","*","-"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Country<\/th>\n      <th>Average lost years<\/th>\n      <th>95% CI<\/th>\n      <th>p-val<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":6,"columnDefs":[{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Country","targets":1},{"name":"Average.lost.years","targets":2},{"name":"X95..CI","targets":3},{"name":"p.val","targets":4}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[6,10,25,50,100],"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'background':'lightblue','angle':'-90','background-size':'98% 88%','background-repeat':'no-repeat','background-position':'center'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'background':'lightblue','angle':'-90','background-size':'98% 88%','background-repeat':'no-repeat','background-position':'center'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'background':'lightblue','angle':'-90','background-size':'98% 88%','background-repeat':'no-repeat','background-position':'center'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'background':'lightblue','angle':'-90','background-size':'98% 88%','background-repeat':'no-repeat','background-position':'center'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+---
+background-image: url("images/cool.png")
+# Discussion
+
+- Persons with chronic conditions, on average, have a 16% higher risk of early retirement and lose about 3.7 working months compared to their healthy counterparts.
+- These findings highlight the need for prevention and rehabilitation interventions as well as policies promoting the integration or reintegration of people with CDs in the workplace.
+- Further research should focus on studying the impact of specific conditions and the mechanism of deciding to stay/leave the labour market after having CDs for better-targeted policy implementation.
+
+---
+background-image: url("images/cool.png")
+# References
+.footnote[
+&lt;sup&gt;1&lt;/sup&gt; European Commission. Directorate General for Economic and Financial Affairs. (2020). The 2021 ageing report: Underlying assumptions and projection methodologies. Publications Office. https://data.europa.eu/doi/10.2765/733565
+
+&lt;sup&gt;2&lt;/sup&gt; Hess, M., Naegele, L., Becker, L., Mäcken, J., &amp; De Tavernier, W. (2021). Planned Retirement Timing in Europe: Are Europeans Adapting to the Policy of Extending Working Lives. Frontiers in Sociology, 6, 691066. https://doi.org/10.3389/fsoc.2021.691066
+
+&lt;sup&gt;3&lt;/sup&gt; OECD. (2023). Pensions at a Glance 2023: OECD and G20 Indicators. OECD. https://doi.org/10.1787/678055dd-en
+
+&lt;sup&gt;4&lt;/sup&gt; De Oliveira, C., Saka, M., Bone, L., &amp; Jacobs, R. (2023). The Role of Mental Health on Workplace Productivity: A Critical Review of the Literature. Applied Health Economics and Health Policy, 21(2), 167–193. https://doi.org/10.1007/s40258-022-00761-w
+
+&lt;sup&gt;5&lt;/sup&gt; Fouad, A. M., Waheed, A., Gamal, A., Amer, S. A., Abdellah, R. F., &amp; Shebl, F. M. (2017). Effect of Chronic Diseases on Work Productivity: A Propensity Score Analysis. Journal of Occupational and Environmental Medicine, 59(5), 480–485. https://doi.org/10.1097/JOM.0000000000000981
+
+]
+
+---
+# References
+
+.footnote[
+&lt;sup&gt;6&lt;/sup&gt; Kessler, R. C., Greenberg, P. E., Mickelson, K. D., Meneades, L. M., &amp; Wang, P. S. (2001). The effects of chronic medical conditions on work loss and work cutback. Journal of Occupational and Environmental Medicine, 43(3), 218–225. https://doi.org/10.1097/00043764-200103000-00009
+
+&lt;sup&gt;7&lt;/sup&gt; Roskes, K., Donders, N. C. G. M., &amp; van der Gulden, J. W. J. (2005). Health-related and work-related aspects associated with sick leave: A comparison of chronically ill and non-chronically ill workers. International Archives of Occupational and Environmental Health, 78(4), 270–278. https://doi.org/10.1007/s00420-004-0596-0
+
+&lt;sup&gt;8&lt;/sup&gt; Vos, T., Lim, S. S., Abbafati, C., Abbas, K. M., Abbasi, M., Abbasifard, M., Abbasi-Kangevari, M., Abbastabar, H., Abd-Allah, F., Abdelalim, A., Abdollahi, M., Abdollahpour, I., Abolhassani, H., Aboyans, V., Abrams, E. M., Abreu, L. G., Abrigo, M. R. M., Abu-Raddad, L. J., Abushouk, A. I., … Murray, C. J. L. (2020). Global burden of 369 diseases and injuries in 204 countries and territories, 1990–2019: A systematic analysis for the Global Burden of Disease Study 2019. The Lancet, 396(10258), 1204–1222. https://doi.org/10.1016/S0140-6736(20)30925-9
+
+&lt;sup&gt;9&lt;/sup&gt; Callaway, B., &amp; Sant’Anna, P. H. C. (2021). Difference-in-Differences with multiple time periods. Journal of Econometrics, 225(2), 200–230. https://doi.org/10.1016/j.jeconom.2020.12.001
+]
+---
+class: center, middle
+
+
+**Thank you!**
+
+Nga Chau My Ha
+
+[chaumynga.ha@paraplegie.ch](chaumynga.ha@paraplegie.ch)
+
+[chau.ha@stud.unilu.ch](chau.ha@stud.unilu.ch)
+
+&lt;div style="margin-top: 20px;"&gt;
+&lt;img src="https://www.paraplegie.ch/sites/default/files/2018-05/schweizer_praplegiker-forschung_logo_rgb_en.jpg" width="80px" /&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/de/a/a1/Logo_Universit%C3%A4t_Luzern.svg" width="80px" /&gt;
+---
+background-image: url("images/cool.png")
+# Appendix - Descriptive statistics
+
+
+| Variables                        | Total sample &lt;br&gt; (n = 11,903) | With CDs &lt;br&gt; (n = 2,224) | Without CDs &lt;br&gt; (n = 9,679) |
+|----------------------------------|-------------------------------:|--------------------------:|-----------------------------:|
+| **Men**, n (%)                   | 6,273 (52.7)                   | 1,180 (53.1)              | 5,093 (52.6)                 |
+| **Age**, years, mean (SD)        | 58.7 ± 2.6                     | 59.6 ± 1.8                | 58.5 ± 2.7                   |
+| **Number of children**, mean (SD)| 2.2 ± 1.3                      | 2.2 ± 1.3                 | 2.1 ± 1.3                    |
+| **In partnership**, n (%)        |                                |                           |                              |
+| - Yes                            | 9,389 (79.2)                   | 1,730 (77.9)              | 7,659 (79.5)                 |
+| **Education years**, mean (SD)   | 12.6 ± 4.1                     | 12.6 ± 4.2                | 13 ± 4.1                     |
+| **Income percentile**, mean (SD) | 6.5 ± 2.9                      | 6.5 ± 2.9                 | 6.5 ± 2.9                    |
+| **Early retired**, n (%)         |                                |                           |                              |
+| - Yes                            | 1,482 (12.5)                   | 604 (27.2)                | 878 (9.1)                    |
+| - No                             | 10,421 (87.5)                  | 1,620 (72.8)              | 8,801 (90.9)                 |
+
+---
+background-image: url("images/cool.png")
+# Appendix - Outcome 1
+
+&lt;img src="Picture2.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+background-image: url("images/cool.png")
+# Appendix - Outcome 2
+
+Country     | Average years lost to ER |   95% CI    | p-val   
+------------|:------------------------:|:-----------:|:-------:
+Slovenia    |   0.99 = 11.9 months     | 0.61 - 1.38 |    *    
+Belgium     |   0.60 = 7.2 months      | 0.36 - 0.83 |    *    
+Germany     |   0.50 = 6.0 months      | 0.29 - 0.71 |    *    
+Italy       |   0.45 = 5.4 months      | 0.23 - 0.67 |    *    
+Austria     |   0.35 = 4.2 months      | 0.13 - 0.58 |    *    
+Switzerland |   0.23 = 2.8 months      | 0.11 - 0.35 |    *    
+Denmark     |   0.17 = 2.0 months      | 0.09 - 0.27 |    *    
+Spain       |   0.17 = 2.0 months      | 0.03 - 0.32 |    *    
+Sweden      |   0.14 = 1.7 months      | 0.04 - 0.25 |    *    
+Czech       |   0.10 = 1.2 months      | 0.02 - 0.20 |    *    
+Estonia     |   0.03 = 0.4 months      | 0.01 - 0.06 |    *    
+France      |   0.04 = 0.5 months      |-0.03 - 0.11 |    -    
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
